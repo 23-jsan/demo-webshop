@@ -196,10 +196,50 @@ input[type="text"]:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
   list-style: none;
   padding: 0;
   margin: 3rem 0 0 0;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: rotateCircle 20s linear infinite;
+}
+.emoji-list li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.emoji-list li:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-150px) rotate(0deg);
+}
+.emoji-list li:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(90deg) translateY(-150px) rotate(-90deg);
+}
+.emoji-list li:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(180deg) translateY(-150px) rotate(-180deg);
+}
+.emoji-list li:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(270deg) translateY(-150px) rotate(-270deg);
+}
+.emoji-list li > a:not(.emoji-box) {
+  white-space: nowrap;
+  font-size: 1rem;
+}
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .emoji-box {
   display: flex;
